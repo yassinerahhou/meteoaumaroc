@@ -1,5 +1,7 @@
 .main-header {
-  background-color: #3da0e8;
+  /* background-color: #3da0e8; */
+  background: linear-gradient(to top right, #8edeff, #5ba8ff);
+
   color: #fff;
   padding: 10px;
 }
