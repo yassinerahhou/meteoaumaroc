@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <Weather /> {/* Add the Weather component */}
       {/*<Search />*/}
-      <Footer />
+      {/*<Footer />*/}
     </>
   );
 }
