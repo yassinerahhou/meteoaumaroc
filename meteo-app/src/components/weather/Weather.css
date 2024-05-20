@@ -6,6 +6,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: center; /* Center horizontally */
+
 }
 
 input[type="text"] {
@@ -17,6 +18,7 @@ input[type="text"] {
   max-width: 300px; /* Limiting the maximum width */
   margin-right: 10px; /* Adding some space between input and button */
   margin-top: 3%;
+  box-shadow: 0px 2px 5px rgba(40, 153, 239, 0.2);
 }
 
 button {
