@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Weather from "./components/weather/Weather";
 import "./App.css";
-import "./DarkMode.css"; // Import DarkMode.css
+import "./DarkMode.css"; // Imporrt DarkMode.css
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
