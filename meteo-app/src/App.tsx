@@ -1,8 +1,7 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-// import Weather from "./components/weather/Weather"; 
+// import Weather from "./components/weather/Weather";
 import Search from "./components/search-irea/";
-
 
 import "./App.css";
 
@@ -12,10 +11,9 @@ function App() {
       <Header />
       {/* <Weather />  */}
       <Search />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
 
 export default App;
-
