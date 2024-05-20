@@ -1,25 +1,29 @@
-/*import Header from "./components/Header";*/
-import Footer from "./components/Footer";
-import Weather from "./components/weather/Weather"; 
-/*import Search from "./components/search-irea"; */
+import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
-
-
-
-
+import Weather from "./components/weather/Weather";
 import "./App.css";
+import "./DarkMode.css"; // Import DarkMode.css
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle("dark-mode", !darkMode);
+  };
+
   return (
     <>
-      {/*<Header />*/}
       <Navbar />
-      <Weather /> {/* Add the Weather component */}
-      {/*<Search />*/}
-      {/*<Footer />*/}
+      <button onClick={toggleDarkMode} className={darkMode ? "dark-mode" : ""}>
+        Dark Mode
+      </button>
+      <Weather />
     </>
   );
 }
 
 export default App;
+
+
 

@@ -1,9 +1,15 @@
-import React, { useState } from "react";
-import "./Weather.css"
+import React, { useState, useEffect } from "react";
+import "./Weather.css";
 
 const Weather: React.FC = () => {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState<any>(null);
+  const [searchHistory, setSearchHistory] = useState<string[]>([]);
+
+  useEffect(() => {
+    const savedHistory = JSON.parse(localStorage.getItem("searchHistory") || "[]");
+    setSearchHistory(savedHistory);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -13,13 +19,23 @@ const Weather: React.FC = () => {
       );
       const data = await response.json();
       setWeatherData(data);
+      setSearchHistory((prevHistory) => {
+        const newHistory = [city, ...prevHistory.slice(0, 4)];
+        localStorage.setItem("searchHistory", JSON.stringify(newHistory));
+        return newHistory;
+      });
     } catch (error) {
       console.error("Error fetching weather data:", error);
     }
   };
 
+  const clearHistory = () => {
+    localStorage.removeItem("searchHistory");
+    setSearchHistory([]);
+  };
+
   return (
-    <div className="weather-container"> {/* Add className="weather-container" here */}
+    <div className="weather-container">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -40,11 +56,21 @@ const Weather: React.FC = () => {
           <p>Visibility: {weatherData.visibility / 1000} km</p>
         </div>
       )}
+      <div className="history-container">
+        <h2>Search History</h2>
+        <ul>
+          {searchHistory.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+        <button onClick={clearHistory}>Clear History</button>
+      </div>
     </div>
   );
 };
 
 export default Weather;
+
 
 
 

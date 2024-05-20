@@ -1,0 +1,13 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  .nav.dark-mode {
+    background-color: #333333;
+  }
+  
+  input.dark-mode, button.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+  }
