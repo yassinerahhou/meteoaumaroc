@@ -9,7 +9,23 @@ interface WeatherDisplayProps {
 
 const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData }) => {
   if (!weatherData) {
-    return <div>No weather data available</div>;
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          border: "2px solid #ccc",
+          padding: "10px",
+          borderRadius: "5px",
+          backgroundColor: "#f9f9f9",
+          fontSize: "24px",
+          color: "#333",
+        }}
+      >
+        Please enter your city name
+      </div>
+    );
   }
   // const weatherIconClass = getWeatherIcon("01d");
   const WeatherIcon = getWeatherIcon(weatherData.weather[0].icon);

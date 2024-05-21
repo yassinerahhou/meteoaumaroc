@@ -1,8 +1,8 @@
-// src/components/Search.tsx
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { optionType, weatherDataType } from "./../../types/index";
+import { optionType, weatherDataType } from "./../../types";
 import "./style.css";
 import WeatherDisplay from "./WeatherDisplay";
+import Map from "./../map_area/MoroccoMapSection";
 
 export default function Search(): JSX.Element {
   const [term, setTerm] = useState<string>("");
@@ -99,8 +99,10 @@ export default function Search(): JSX.Element {
         <br />
       </section>
       <div>
-        {" "}
-        <WeatherDisplay weatherData={weatherData} />{" "}
+        <WeatherDisplay weatherData={weatherData} />
+      </div>
+      <div>
+        <Map />
       </div>
     </>
   );
