@@ -122,3 +122,13 @@
 
   float: right;
 }
+
+#wheather_icon {
+  height: 70px;
+  width: 100%;
+  font-size: 5em;
+  padding-right: 25px;
+  color: gray;
+
+  /* background-color: black; */
+}

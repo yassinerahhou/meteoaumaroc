@@ -2,7 +2,7 @@ import React from "react";
 import { weatherDataType } from "./../../types";
 import "./WeatherDisplay.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-// import { getWeatherIcon } from "./WeatherIcons";
+import { getWeatherIcon } from "./WeatherIcons";
 interface WeatherDisplayProps {
   weatherData: weatherDataType | null;
 }
@@ -12,6 +12,7 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData }) => {
     return <div>No weather data available</div>;
   }
   // const weatherIconClass = getWeatherIcon("01d");
+  const WeatherIcon = getWeatherIcon(weatherData.weather[0].icon);
 
   return (
     <div className="weather-display">
@@ -35,7 +36,10 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData }) => {
         <div className="api_data">
           <span id="current_data_left">
             <p id="temp_id">
-              <span>{/* <i className={weatherIconClass}></i> */}</span>{" "}
+              <span id="wheather_icon">
+                {" "}
+                <i className={WeatherIcon}></i>
+              </span>{" "}
               <span id="tempereteur">{weatherData.main.temp}°</span>C
             </p>
           </span>
