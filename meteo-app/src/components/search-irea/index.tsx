@@ -1,6 +1,6 @@
 // src/components/Search.tsx
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { optionType,  weatherDataType } from "./../../types/index";
+import { optionType, weatherDataType } from "./../../types/index";
 import "./style.css";
 import WeatherDisplay from "./WeatherDisplay";
 
@@ -96,8 +96,12 @@ export default function Search(): JSX.Element {
         <br />
         <h1 id="recent_loca"> RECENT LOCATIONS </h1>
         <div className="last_locations"></div>
-        <WeatherDisplay weatherData={weatherData} />
+        <br />
       </section>
+      <div>
+        {" "}
+        <WeatherDisplay weatherData={weatherData} />{" "}
+      </div>
     </>
   );
 }
