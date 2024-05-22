@@ -2,13 +2,14 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { optionType, weatherDataType } from "./../../types";
 import "./style.css";
 import WeatherDisplay from "./WeatherDisplay";
-// import Map from "./../map_area/MoroccoMapSection";
+import Map from "./../map_area/MoroccoMapSection";
 
 export default function Search(): JSX.Element {
   const [term, setTerm] = useState<string>("");
   const [city, setCity] = useState<optionType | null>(null);
   const [options, setOptions] = useState<optionType[]>([]);
   const [weatherData, setWeatherData] = useState<weatherDataType | null>(null);
+  const [recentCities, setRecentCities] = useState<{ city: optionType, weather: weatherDataType }[]>([]);
 
   const getSearchoptions = (value: string) => {
     fetch(
@@ -28,9 +29,13 @@ export default function Search(): JSX.Element {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=a66d11d3a668ad93f9cf6b25dc0ac419`
     )
-      .then((res) => res.json())
-      .then((data) => setWeatherData(data));
-  };
+    .then((res) => res.json())
+    .then((data) => {
+      setWeatherData(data);
+      // Add the city and its weather data to the recentCities list
+      setRecentCities(prev => [...prev, { city, weather: data }]);
+    });
+};
 
   const onSubmit = () => {
     if (!city) return;
@@ -95,16 +100,21 @@ export default function Search(): JSX.Element {
         </div>
         <br />
         <h1 id="recent_loca"> RECENT LOCATIONS </h1>
-        <div className="last_locations"></div>
+        <div className="last_locations">
+          {recentCities.slice(-3).map((recentCity, index) => (
+          <div key={index} className="city_cube">
+            <p>{recentCity.city.name}</p>
+            <p>{recentCity.weather.main.temp}°C</p>
+          </div>
+          ))}
+        </div>
         <br />
       </section>
       <div>
         <WeatherDisplay weatherData={weatherData} />
       </div>
       <div>
-        {/* static map only */}
-
-        {/* <Map /> */}
+        <Map />
       </div>
     </>
   );
