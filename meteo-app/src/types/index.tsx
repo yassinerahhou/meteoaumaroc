@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type optionType = {
   name: string;
   lat: number;
@@ -7,6 +9,7 @@ export type optionType = {
 export interface weatherDataType {
   name: string;
   main: {
+    feels_like: ReactNode;
     temp: number;
     humidity: number;
   };
