@@ -19,3 +19,9 @@
 .dark-mode-toggle.dark-mode {
   color: #e1f645; /* Adjust color for dark mode icon */
 }
+
+.parrent_div {
+  width: 70%;
+  margin: auto;
+  border: red 1px solid;
+}
