@@ -32,10 +32,12 @@ export default function Search(): JSX.Element {
     .then((res) => res.json())
     .then((data) => {
       setWeatherData(data);
-      // Add the city and its weather data to the recentCities list
-      setRecentCities(prev => [...prev, { city, weather: data }]);
+      // Save recent cities to localStorage
+      const updatedRecentCities = [...recentCities, { city, weather: data }];
+      setRecentCities(updatedRecentCities);
+      localStorage.setItem('recentCities', JSON.stringify(updatedRecentCities));
     });
-};
+  };
 
   const onSubmit = () => {
     if (!city) return;
@@ -52,6 +54,14 @@ export default function Search(): JSX.Element {
       setOptions([]);
     }
   }, [city]);
+
+  // Load recent cities from localStorage on component mount
+  useEffect(() => {
+    const storedRecentCities = localStorage.getItem('recentCities');
+    if (storedRecentCities) {
+      setRecentCities(JSON.parse(storedRecentCities));
+    }
+  }, []);
 
   return (
     <>
