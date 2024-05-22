@@ -15,19 +15,19 @@ export default function Footer() {
             </span>
           </div>
           <div className="quick_links">
-            <h3>En savoir plus</h3>
+            <h3>MOST VIEWD CITY</h3>
             <ul>
               <li>
-                <a href="#">Qui sommes-nous ?</a>
+                <a href="#">AGADIR</a>
               </li>
               <li>
-                <a href="#">Accessibilité</a>
+                <a href="#">CASABLANCA</a>
               </li>
               <li>
-                <a href="#">Actualités</a>
+                <a href="#">RABAT</a>
               </li>
               <li>
-                <a href="#">FAQ</a>
+                <a href="#">TANGER</a>
               </li>
             </ul>
           </div>
