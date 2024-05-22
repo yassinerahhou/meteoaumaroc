@@ -1,41 +1,49 @@
 FIRST STEP TO CREAT OUR APP
-# npm create vite@latest
-# cd mete-app
-# npm install
-# npm run dev
-npm install leaflet 
-npm i --save-dev @types/leaflet
 
+# npm create vite@latest
+
+# cd mete-app
+
+# npm install
+
+# npm run dev
+
+npm install leaflet
+npm i --save-dev @types/leaflet
 
 install scss
 install frint awsem packgae ; npm install @fortawesome/fontawesome-free
 
 2. Get Weather Data
-You'll need to fetch weather data from a weather API. OpenWeatherMap, Weatherstack, and AccuWeather are popular choices. Choose one and sign up for an API key.
+   You'll need to fetch weather data from a weather API. OpenWeatherMap, Weatherstack, and AccuWeather are popular choices. Choose one and sign up for an API key.
 
 3. Create Components
-Plan out your components. You might need components for:
+   Plan out your components. You might need components for:
 
 Header
 Search Bar
-Weather Display
-4. Fetch Weather Data
+Weather Display 4. Fetch Weather Data
 Create a function to fetch weather data from the API using fetch or a library like Axios. You can use useState to store the weather data in your component's state.
 
 5. Display Weather Information
-Render the weather information on your webpage. You can display the current temperature, weather conditions, humidity, wind speed, etc.
+   Render the weather information on your webpage. You can display the current temperature, weather conditions, humidity, wind speed, etc.
 
 6. Add Search Functionality
-Implement a search bar where users can input a city name or zip code to get weather information for that location.
+   Implement a search bar where users can input a city name or zip code to get weather information for that location.
 
 7. Style Your App
-Apply CSS or a CSS framework like Bootstrap to style your weather app and make it visually appealing.
+   Apply CSS or a CSS framework like Bootstrap to style your weather app and make it visually appealing.
 
 8. Error Handling
-Handle errors gracefully in case the API request fails or the user enters invalid input in the search bar.
+   Handle errors gracefully in case the API request fails or the user enters invalid input in the search bar.
 
 9. Deploy Your App
-Once your weather app is ready, deploy it to a hosting service like Netlify, Vercel, or GitHub Pages so others can access it.
+   Once your weather app is ready, deploy it to a hosting service like Netlify, Vercel, or GitHub Pages so others can access it.
 
+# TO DO : create MAP - wheter live\*
 
-# TO DO : create MAP - wheter live*
+# 5 /22 /2024 :
+
+Try to add Dynamic MAP : open-source JavaScript library for interactive maps. It is lightweight, easy to use, and has a straightforward API, making it popular for embedding maps in web applications. Leaflet provides functionalities for creating and displaying maps, adding markers, handling events, and more.
+
+# npm install react-leaflet leaflet
