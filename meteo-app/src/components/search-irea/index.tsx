@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { optionType, weatherDataType } from "./../../types";
 import "./style.css";
 import WeatherDisplay from "./WeatherDisplay";
-import Map from "./../map_area/MoroccoMapSection";
+// import Map from "./../map_area/MoroccoMapSection";
 
 export default function Search(): JSX.Element {
   const [term, setTerm] = useState<string>("");
@@ -102,7 +102,9 @@ export default function Search(): JSX.Element {
         <WeatherDisplay weatherData={weatherData} />
       </div>
       <div>
-        <Map />
+        {/* static map only */}
+
+        {/* <Map /> */}
       </div>
     </>
   );

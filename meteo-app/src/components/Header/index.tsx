@@ -1,5 +1,5 @@
 import "./header_style.css";
-
+// import {sky} from "./../../assets/sky-blue-1.jpg"
 export default function Header() {
   return (
     <>
