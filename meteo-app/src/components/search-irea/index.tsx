@@ -114,7 +114,7 @@ export default function Search(): JSX.Element {
         <WeatherDisplay weatherData={weatherData} />
       </div>
       <div>
-        <Map />
+        {/*<Map />*/}
       </div>
     </>
   );
