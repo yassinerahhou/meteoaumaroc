@@ -1,9 +1,9 @@
 footer {
-  background-color: #3da0e8;
+  background: linear-gradient(to top right, #1e5fa8, #8edeff);
   color: #fff;
-  padding: 20px 0;
+  /* padding: 20px 0; */
   /* fix footer  */
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
@@ -48,4 +48,15 @@ footer {
 ul {
   list-style: none;
   padding: 0;
+}
+
+.quick_links a,
+.LEGAL-PAGES a {
+  color: #fff;
+  text-decoration: none;
+
+  font-size: small;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
