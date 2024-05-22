@@ -1,62 +1,72 @@
+/* Footer background and layout */
 footer {
-  background: linear-gradient(to top right, #1e5fa8, #8edeff);
+  background: linear-gradient(to top right, #1e5fa8, #63caf5);
   color: #fff;
-  /* padding: 20px 0; */
-  /* fix footer  */
-  /* position: fixed; */
-  left: 0;
-  bottom: 0;
-  width: 100%;
   padding: 20px;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align items */
 }
 
 #copyright {
-  display: inline-block;
-
   color: #fff;
-  border: none;
-
   font-size: small;
   cursor: pointer;
   font-family: "Courier New", Courier, monospace;
+  margin-top: 20px; /* Add space above the copyright paragraph */
 }
 
-.parrent-div {
-  /* flex setting  */
+.parent-div {
   display: flex;
   justify-content: space-around;
-  flex-direction: row;
-  width: 80%;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  width: 100%; /* Full width */
 }
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-image {
+  width: 150px; /* Adjust the logo size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Add space below the logo */
+}
+
 #social-media {
   display: flex;
   justify-content: space-between;
-  /* margin-left: 10px; */
-  padding-top: 30%;
+  width: 100px; /* Adjust as needed for spacing between icons */
 }
 
-#copyright {
-  display: inline-block;
-
-  color: #fff;
-  border: none;
-
-  font-size: small;
-  cursor: pointer;
-  font-family: "Courier New", Courier, monospace;
-}
 ul {
   list-style: none;
   padding: 0;
 }
 
-.quick_links a,
-.LEGAL-PAGES a {
+.quick-links a,
+.legal-pages a,
+.popular-articles a {
   color: #fff;
   text-decoration: none;
-
   font-size: small;
   cursor: pointer;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: block; /* Ensure each link is on a new line */
+  margin: 5px 0; /* Add space between links */
+}
+
+.quick-links ul,
+.legal-pages ul,
+.popular-articles ul {
+  line-height: 1.6; /* Adjust line height for spacing between lines */
+  padding: 0; /* Remove default padding */
+}
+
+.quick-links,
+.legal-pages,
+.popular-articles {
+  margin-bottom: 20px; /* Add space between sections */
+  text-align: center; /* Center align text */
 }
