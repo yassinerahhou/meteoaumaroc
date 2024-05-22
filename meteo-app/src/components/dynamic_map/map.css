@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+#map {
+  height: 500px;
+  width: 800%;
+  margin: 20px 0;
+}
+.dnyamic_map {
+  /* border: 2px red solid; */
+  height: 800px;
+  width: 70%;
+  /* padding: auto; */
+  margin-left: 10px;
+}
