@@ -8,6 +8,35 @@
 }
 #recent_loca {
   color: white;
+  font-size: 1.5rem; /* Larger font size for the heading */
+}
+
+.last_locations {
+  display: flex;
+  justify-content: space-around; /* Evenly distribute the cubes */
+}
+
+.city_cube {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #ffffff; /* White border */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Hazy effect */
+}
+
+.city_name,
+.feels_like {
+  font-size: 1.2rem; /* Larger font size for city name and "feels like" */
+}
+
+.temperature {
+  font-size: 1rem; /* Smaller font size for temperature */
 }
 
 .myInput {
@@ -15,6 +44,7 @@
   border: 2px solid white;
   border-radius: 0.375rem 0 0 0.375rem;
 }
+
 
 button {
   border-radius: 0 0.375rem 0.375rem 0;
@@ -66,3 +96,4 @@ button:hover {
   background-color: #718096;
   color: #ffffff;
 }
+

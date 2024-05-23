@@ -1,0 +1,71 @@
+.map-container {
+  position: relative;
+  width: 80%;
+  max-width: 80%;
+  /* margin: auto; */
+  padding: 50px 0 0 25px;
+}
+
+.morocco-map {
+  width: 80%;
+  height: auto;
+}
+
+.city-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.city-name {
+  font-weight: bold;
+  padding-right: 20px;
+  margin: 5px;
+}
+
+.city-weather {
+  margin-top: 5px;
+  font-size: 0.9em;
+  /* margin-left: ; */
+}
+
+/* Adjust positions based on the actual locations on the image */
+.casablanca {
+  top: 23%; /* Adjust these values */
+  left: 50%; /* Adjust these values */
+}
+
+.rabat {
+  top: 17%; /* Adjust these values */
+  left: 55%; /* Adjust these values */
+}
+
+.marrakesh {
+  top: 37%; /* Adjust these values */
+  left: 40%; /* Adjust these values */
+}
+
+.fes {
+  top: 20%; /* Adjust these values */
+  left: 65%; /* Adjust these values */
+}
+
+.tangier {
+  top: 12%; /* Adjust these values */
+  left: 55%; /* Adjust these values */
+}
+.agadir {
+  top: 44%;
+  left: 38%;
+}
+.dakhla {
+  top: 80%;
+  left: 15%;
+}
+.weather-icon {
+  padding-left: 8px;
+}

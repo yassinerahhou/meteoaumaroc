@@ -1,14 +1,15 @@
-// src/components/Search.tsx
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { optionType,  weatherDataType } from "./../../types/index";
+import { optionType, weatherDataType } from "./../../types";
 import "./style.css";
 import WeatherDisplay from "./WeatherDisplay";
+//import Map from "./../map_area/MoroccoMapSection";
 
 export default function Search(): JSX.Element {
   const [term, setTerm] = useState<string>("");
   const [city, setCity] = useState<optionType | null>(null);
   const [options, setOptions] = useState<optionType[]>([]);
   const [weatherData, setWeatherData] = useState<weatherDataType | null>(null);
+  const [recentCities, setRecentCities] = useState<{ city: optionType, weather: weatherDataType }[]>([]);
 
   const getSearchoptions = (value: string) => {
     fetch(
@@ -28,8 +29,14 @@ export default function Search(): JSX.Element {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=a66d11d3a668ad93f9cf6b25dc0ac419`
     )
-      .then((res) => res.json())
-      .then((data) => setWeatherData(data));
+    .then((res) => res.json())
+    .then((data) => {
+      setWeatherData(data);
+      // Save recent cities to localStorage
+      const updatedRecentCities = [...recentCities, { city, weather: data }];
+      setRecentCities(updatedRecentCities);
+      localStorage.setItem('recentCities', JSON.stringify(updatedRecentCities));
+    });
   };
 
   const onSubmit = () => {
@@ -47,6 +54,14 @@ export default function Search(): JSX.Element {
       setOptions([]);
     }
   }, [city]);
+
+  // Load recent cities from localStorage on component mount
+  useEffect(() => {
+    const storedRecentCities = localStorage.getItem('recentCities');
+    if (storedRecentCities) {
+      setRecentCities(JSON.parse(storedRecentCities));
+    }
+  }, []);
 
   return (
     <>
@@ -95,9 +110,23 @@ export default function Search(): JSX.Element {
         </div>
         <br />
         <h1 id="recent_loca"> RECENT LOCATIONS </h1>
-        <div className="last_locations"></div>
-        <WeatherDisplay weatherData={weatherData} />
+        <div className="last_locations">
+          {recentCities.slice(-3).map((recentCity, index) => (
+            <div key={index} className="city_cube">
+              <p>
+                {recentCity.city.name}: {recentCity.weather.main.temp}°C Feels like: {recentCity.weather.main.feels_like}°C
+              </p>
+            </div>
+          ))}
+        </div>
+        <br />
       </section>
+      <div>
+        <WeatherDisplay weatherData={weatherData} />
+      </div>
+      <div>
+        {/*<Map />*/}
+      </div>
     </>
   );
 }

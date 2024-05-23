@@ -4,3 +4,24 @@
   box-sizing: border-box;
   font-family: "Poetsen One", sans-serif;
 }
+.dark-mode-toggle {
+  margin-top: 10px; /* Adjusted margin-top */
+  padding-left: 97%;
+  position: relative;
+  transform: translateY(-50%);
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 23px; /* Adjust icon size */
+}
+.dark-mode-toggle.dark-mode {
+  color: #e1f645; /* Adjust color for dark mode icon */
+}
+
+.parrent_div {
+  width: 70%;
+  margin: auto;
+  border: red 1px solid;
+}

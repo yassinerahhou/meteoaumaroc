@@ -30,3 +30,9 @@
 .access-div p {
   margin: 0;
 }
+.logo-image {
+  /* float: left; */
+  width: 75px; /* Adjust the width as needed */
+  max-height: 100px;
+  /* border: red 1px solid; */
+}
