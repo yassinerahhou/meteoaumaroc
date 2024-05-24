@@ -5,7 +5,7 @@ import logo from "./../../assets/logo-2.png";
 export default function Footer() {
   return (
     <>
-      <footer>
+      <footer className="f-test">
         <div className="parent-div">
           <div className="logo">
             {/* Logo image */}

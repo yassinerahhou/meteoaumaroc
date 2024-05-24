@@ -9,7 +9,9 @@ export default function Search(): JSX.Element {
   const [options, setOptions] = useState<optionType[]>([]);
   const [weatherData, setWeatherData] = useState<weatherDataType | null>(null);
   const [forecastData, setForecastData] = useState<any>(null);
-  const [recentCities, setRecentCities] = useState<{ city: optionType, weather: weatherDataType }[]>([]);
+  const [recentCities, setRecentCities] = useState<
+    { city: optionType; weather: weatherDataType }[]
+  >([]);
   const [selectedDate, setSelectedDate] = useState<string>("");
 
   const getSearchoptions = (value: string) => {
@@ -30,20 +32,25 @@ export default function Search(): JSX.Element {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=a66d11d3a668ad93f9cf6b25dc0ac419`
     )
-    .then((res) => res.json())
-    .then((data) => {
-      setWeatherData(data);
-      // Save recent cities to localStorage
-      const updatedRecentCities = [...recentCities, { city, weather: data }];
-      setRecentCities(updatedRecentCities);
-      localStorage.setItem('recentCities', JSON.stringify(updatedRecentCities));
-      // Fetch forecast data
-      fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=a66d11d3a668ad93f9cf6b25dc0ac419`)
-        .then((res) => res.json())
-        .then((forecast) => {
-          setForecastData(forecast);
-        });
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        setWeatherData(data);
+        // Save recent cities to localStorage
+        const updatedRecentCities = [...recentCities, { city, weather: data }];
+        setRecentCities(updatedRecentCities);
+        localStorage.setItem(
+          "recentCities",
+          JSON.stringify(updatedRecentCities)
+        );
+        // Fetch forecast data
+        fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=a66d11d3a668ad93f9cf6b25dc0ac419`
+        )
+          .then((res) => res.json())
+          .then((forecast) => {
+            setForecastData(forecast);
+          });
+      });
   };
 
   const onSubmit = () => {
@@ -64,7 +71,7 @@ export default function Search(): JSX.Element {
 
   // Load recent cities from localStorage on component mount
   useEffect(() => {
-    const storedRecentCities = localStorage.getItem('recentCities');
+    const storedRecentCities = localStorage.getItem("recentCities");
     if (storedRecentCities) {
       setRecentCities(JSON.parse(storedRecentCities));
     }
@@ -79,9 +86,9 @@ export default function Search(): JSX.Element {
     <>
       <section className="search_1">
         <div className="">
-          <h1 style={{ fontSize: "2.25rem", fontWeight: "300" }}>
+          {/* <h1 style={{ fontSize: "2.25rem", fontWeight: "300" }}>
             METEO <span>MAROC</span>{" "}
-          </h1>
+          </h1> */}
           <p style={{ fontSize: "0.875rem", marginTop: "0.5rem" }}>
             Enter below a place you want to know the weather of and select an
             option from the dropdown
@@ -126,7 +133,8 @@ export default function Search(): JSX.Element {
           {recentCities.slice(-3).map((recentCity, index) => (
             <div key={index} className="city_cube">
               <p>
-                {recentCity.city.name}: {recentCity.weather.main.temp}°C Feels like: {recentCity.weather.main.feels_like}°C
+                {recentCity.city.name}: {recentCity.weather.main.temp}°C Feels
+                like: {recentCity.weather.main.feels_like}°C
               </p>
             </div>
           ))}
@@ -139,7 +147,17 @@ export default function Search(): JSX.Element {
           <div className="forecast-section">
             <h2>3-hour Forecast for the Next 5 Days</h2>
             <div className="forecast-dates">
-              {(Array.from(new Set(forecastData.list.map((forecast: any) => forecast.dt_txt.split(" ")[0]))).filter(date => date !== new Date().toISOString().split("T")[0]) as string[]).map((date, index) => (
+              {(
+                Array.from(
+                  new Set(
+                    forecastData.list.map(
+                      (forecast: any) => forecast.dt_txt.split(" ")[0]
+                    )
+                  )
+                ).filter(
+                  (date) => date !== new Date().toISOString().split("T")[0]
+                ) as string[]
+              ).map((date, index) => (
                 <button
                   key={index}
                   onClick={() => handleDateSelect(date)}
@@ -151,10 +169,15 @@ export default function Search(): JSX.Element {
             </div>
             <div className="forecast-scroll-container">
               {forecastData.list
-                .filter((forecast: any) => forecast.dt_txt.split(" ")[0] === selectedDate)
+                .filter(
+                  (forecast: any) =>
+                    forecast.dt_txt.split(" ")[0] === selectedDate
+                )
                 .map((forecast: any, index: number) => (
                   <div key={index} className="forecast-card">
-                    <span>{forecast.dt_txt.split(" ")[1]}: {forecast.main.temp}°C</span>
+                    <span>
+                      {forecast.dt_txt.split(" ")[1]}: {forecast.main.temp}°C
+                    </span>
                   </div>
                 ))}
             </div>
@@ -164,9 +187,3 @@ export default function Search(): JSX.Element {
     </>
   );
 }
-
-
-
-
-
-

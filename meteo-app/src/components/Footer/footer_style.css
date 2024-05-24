@@ -1,5 +1,5 @@
 /* Footer background and layout */
-footer {
+.f-test {
   background: linear-gradient(to top right, #1e5fa8, #63caf5);
   color: #fff;
   padding: 20px;
