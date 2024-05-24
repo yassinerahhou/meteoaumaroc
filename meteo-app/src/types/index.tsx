@@ -7,6 +7,7 @@ export type optionType = {
   country: string;
 };
 export interface weatherDataType {
+  visibility: number;
   name: string;
   main: {
     feels_like: ReactNode;

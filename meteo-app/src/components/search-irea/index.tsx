@@ -1,15 +1,16 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { optionType, weatherDataType } from "./../../types";
 import "./style.css";
 import WeatherDisplay from "./WeatherDisplay";
-//import Map from "./../map_area/MoroccoMapSection";
 
 export default function Search(): JSX.Element {
   const [term, setTerm] = useState<string>("");
   const [city, setCity] = useState<optionType | null>(null);
   const [options, setOptions] = useState<optionType[]>([]);
   const [weatherData, setWeatherData] = useState<weatherDataType | null>(null);
+  const [forecastData, setForecastData] = useState<any>(null);
   const [recentCities, setRecentCities] = useState<{ city: optionType, weather: weatherDataType }[]>([]);
+  const [selectedDate, setSelectedDate] = useState<string>("");
 
   const getSearchoptions = (value: string) => {
     fetch(
@@ -36,6 +37,12 @@ export default function Search(): JSX.Element {
       const updatedRecentCities = [...recentCities, { city, weather: data }];
       setRecentCities(updatedRecentCities);
       localStorage.setItem('recentCities', JSON.stringify(updatedRecentCities));
+      // Fetch forecast data
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=a66d11d3a668ad93f9cf6b25dc0ac419`)
+        .then((res) => res.json())
+        .then((forecast) => {
+          setForecastData(forecast);
+        });
     });
   };
 
@@ -62,6 +69,11 @@ export default function Search(): JSX.Element {
       setRecentCities(JSON.parse(storedRecentCities));
     }
   }, []);
+
+  // Function to handle date selection
+  const handleDateSelect = (date: string) => {
+    setSelectedDate(date);
+  };
 
   return (
     <>
@@ -123,10 +135,38 @@ export default function Search(): JSX.Element {
       </section>
       <div>
         <WeatherDisplay weatherData={weatherData} />
-      </div>
-      <div>
-        {/*<Map />*/}
+        {forecastData && (
+          <div className="forecast-section">
+            <h2>3-hour Forecast for the Next 5 Days</h2>
+            <div className="forecast-dates">
+              {(Array.from(new Set(forecastData.list.map((forecast: any) => forecast.dt_txt.split(" ")[0]))).filter(date => date !== new Date().toISOString().split("T")[0]) as string[]).map((date, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleDateSelect(date)}
+                  className={selectedDate === date ? "selected" : ""}
+                >
+                  {date}
+                </button>
+              ))}
+            </div>
+            <div className="forecast-scroll-container">
+              {forecastData.list
+                .filter((forecast: any) => forecast.dt_txt.split(" ")[0] === selectedDate)
+                .map((forecast: any, index: number) => (
+                  <div key={index} className="forecast-card">
+                    <span>{forecast.dt_txt.split(" ")[1]}: {forecast.main.temp}°C</span>
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
 }
+
+
+
+
+
+

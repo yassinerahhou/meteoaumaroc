@@ -97,3 +97,52 @@ button:hover {
   color: #ffffff;
 }
 
+.forecast-section {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  max-width: 600px; /* Limit the width of the forecast section */
+  margin-left: 1%;
+  margin-right: auto;
+  box-shadow: 0 0 10px rgba(190, 187, 187, 0.5); /* Hazy effect */
+}
+
+.forecast-dates {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.forecast-dates button {
+  padding: 5px 10px; /* Smaller padding */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.forecast-dates button.selected {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.forecast-scroll-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.forecast-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px; /* Smaller padding */
+  border-bottom: 1px solid #ccc;
+}
+
+.forecast-card span {
+  display: inline-block;
+  margin-right: 10px;
+}
