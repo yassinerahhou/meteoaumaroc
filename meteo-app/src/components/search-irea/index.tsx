@@ -134,7 +134,13 @@ export default function Search(): JSX.Element {
           </div>
         </div>
         <br />
-        <h1 id="recent_loca"> RECENT LOCATIONS </h1>
+        <h1
+          className="text-1xl font-bold leading-snug text-black-700 mb-10 wow fadeInUp"
+          // id="recent_loca"
+        >
+          {" "}
+          RECENT LOCATIONS{" "}
+        </h1>
         <div className="last_locations">
           {recentCities.slice(-3).map((recentCity, index) => (
             <div key={index} className="city_cube">
@@ -148,10 +154,15 @@ export default function Search(): JSX.Element {
         <br />
       </section>
       <div>
+        <br />
+        <br />
+        <br />
         <WeatherDisplay weatherData={weatherData} />
         {forecastData && (
           <div className="forecast-section">
-            <h2>3-hour Forecast for the Next 5 Days</h2>
+            <h2 className="text-4l font-bold leading-snug text-gray-700 mb-10 wow fadeInUp">
+              3-hour Forecast for the Next 5 Days
+            </h2>
             <div className="forecast-dates">
               {(
                 Array.from(

@@ -1,6 +1,9 @@
 .weather-display {
-  width: 75%;
+  width: 65%;
   padding-left: 10px;
+  margin: 2% 18%;
+  height: 350px;
+  /* border: black 2px solid; */
 }
 .weather-display h2 {
   margin-bottom: 10px;
@@ -22,9 +25,9 @@
   color: #000;
 }
 .Current_wheather_p1 {
-  width: 80%;
+  width: 100%;
 
-  height: 250px;
+  height: 280px;
 
   border: 1px;
 
@@ -34,7 +37,7 @@
   font: inherit;
   margin: 0;
   vertical-align: baseline;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 .data_info {
   /* border: red solid 1px; */

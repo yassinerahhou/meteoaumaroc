@@ -7,13 +7,21 @@
   /* background: linear-gradient(to bottom right, #8edeff, #5ba8ff); */
 }
 #recent_loca {
-  color: white;
-  font-size: 1.5rem; /* Larger font size for the heading */
+  color: rgb(21, 2, 2);
+  font-size: 1.3rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; /* Larger font size for the heading */
 }
 
 .last_locations {
   display: flex;
-  justify-content: space-around; /* Evenly distribute the cubes */
+  justify-content: space-around;
+  /* margin: 5%; */
+  border: 2px green solid;
+  width: 60%;
+  margin: 0 20%;
+  height: 150px;
+
+  /* Evenly distribute the cubes */
 }
 
 .city_cube {
@@ -99,15 +107,15 @@ button:hover {
 }
 
 .forecast-section {
-  margin-top: 20px;
   padding: 10px;
   border: 1px solid #ffffff;
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.3);
   max-width: 600px; /* Limit the width of the forecast section */
-  margin-left: 1%;
-  margin-right: auto;
+
   box-shadow: 0 0 10px rgba(190, 187, 187, 0.5); /* Hazy effect */
+  border: 2px black solid;
+  margin: auto;
 }
 
 .forecast-dates {
