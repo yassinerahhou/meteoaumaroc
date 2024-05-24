@@ -15,8 +15,8 @@ export default function Footer_2() {
                   <img src={LOGO} alt="" />
                 </div>
                 <p className="text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Quisquam excepturi quasi, ipsam voluptatem.
+                  Your trusted source for real-time weather forecasts and
+                  updates, anytime, anywhere.
                 </p>
               </div>
             </div>

@@ -144,10 +144,10 @@ export default function Search(): JSX.Element {
         <div className="last_locations">
           {recentCities.slice(-3).map((recentCity, index) => (
             <div key={index} className="city_cube">
-              <p>
-                {recentCity.city.name}: {recentCity.weather.main.temp}°C Feels
-                like: {recentCity.weather.main.feels_like}°C
-              </p>
+              <h3 id="recentcity-name">{recentCity.city.name}:</h3>
+              <h1 id="recentcity-temps"> {recentCity.weather.main.temp}°C</h1>
+              <small>Feels like: {recentCity.weather.main.feels_like}°C</small>
+              {/* <p>{recentCity.weather.weather[0].description}</p> */}
             </div>
           ))}
         </div>

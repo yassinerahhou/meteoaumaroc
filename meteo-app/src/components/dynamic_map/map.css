@@ -5,7 +5,6 @@
 #map {
   height: 500px;
   width: 100%;
-  margin: 20px 0;
 }
 .dnyamic_map {
   /* border: 2px red solid; */
@@ -14,5 +13,12 @@
   /* padding: auto; */
   /* margin-left: 40px; */
   /* margin: 20px 0; */
-  margin-top: 100px;
+  /* margin-top: 100px; */
+  margin: 10px 0;
+}
+
+#MAP-TITLE {
+  padding-left: 20px;
+  background-color: rgb(253, 253, 253);
+  border: gray;
 }

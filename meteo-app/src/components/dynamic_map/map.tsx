@@ -82,6 +82,13 @@ const Map: React.FC = () => {
   return (
     // Initialize the map with center coordinates and zoom level
     <>
+      <h1
+        className="text-1xl font-bold leading-snug text-black-700  wow fadeInUp"
+        id="MAP-TITLE"
+      >
+        {" "}
+        Real-Time Weather Conditions
+      </h1>
       <MapContainer
         center={[31.7917, -7.0926]}
         zoom={4}
