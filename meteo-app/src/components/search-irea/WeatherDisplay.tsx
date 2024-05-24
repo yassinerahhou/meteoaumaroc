@@ -11,20 +11,20 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData }) => {
   if (!weatherData) {
     return (
       <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          border: "2px solid #ccc",
-          padding: "10px",
-          borderRadius: "5px",
-          backgroundColor: "#f9f9f9",
-          fontSize: "24px",
-          color: "#333",
-        }}
-      >
-        Please enter your city name
-      </div>
+        style={
+          {
+            // display: "flex",
+            // justifyContent: "center",
+            // alignItems: "center",
+            // border: "2px solid #ccc",
+            // padding: "10px",
+            // borderRadius: "5px",
+            // backgroundColor: "#f9f9f9",
+            // fontSize: "24px",
+            // color: "#333",
+          }
+        }
+      ></div>
     );
   }
   // const weatherIconClass = getWeatherIcon("01d");

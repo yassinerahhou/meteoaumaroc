@@ -1,6 +1,6 @@
 import "./footer_style.css";
 import "@fortawesome/fontawesome-free/css/all.css";
-import logo from "./../../assets/logo-2.png";
+import logo from "./../../assets/img/logox.svg";
 
 export default function Footer() {
   return (

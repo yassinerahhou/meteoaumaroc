@@ -81,39 +81,46 @@ const Map: React.FC = () => {
 
   return (
     // Initialize the map with center coordinates and zoom level
-    <MapContainer center={[31.7917, -7.0926]} zoom={4} className="dnyamic_map">
-      {/* Add a tile layer to the map from OpenStreetMap */}
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      {/* Iterate over the list of cities and create a marker for each */}
-      {cities.map((city) => (
-        <Marker
-          key={city.name}
-          position={[city.lat, city.lon]}
-          eventHandlers={{
-            mouseover: () => handleMouseOver(city.name), // Handle mouseover event
-          }}
-        >
-          {/* Popup to display weather information */}
-          <Popup>
-            <div>
-              <h3>{city.name}</h3>
-              {loading[city.name] ? (
-                <p>Loading...</p> // Show loading message
-              ) : weatherData[city.name] ? (
-                <div>
-                  <p>Temperature: {weatherData[city.name]?.main.temp} °C</p>
-                  <p>
-                    Condition: {weatherData[city.name]?.weather[0].description}
-                  </p>
-                </div>
-              ) : (
-                <p>No data</p> // Show no data message
-              )}
-            </div>
-          </Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+    <>
+      <MapContainer
+        center={[31.7917, -7.0926]}
+        zoom={4}
+        className="dnyamic_map"
+      >
+        {/* Add a tile layer to the map from OpenStreetMap */}
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        {/* Iterate over the list of cities and create a marker for each */}
+        {cities.map((city) => (
+          <Marker
+            key={city.name}
+            position={[city.lat, city.lon]}
+            eventHandlers={{
+              mouseover: () => handleMouseOver(city.name), // Handle mouseover event
+            }}
+          >
+            {/* Popup to display weather information */}
+            <Popup>
+              <div>
+                <h3>{city.name}</h3>
+                {loading[city.name] ? (
+                  <p>Loading...</p> // Show loading message
+                ) : weatherData[city.name] ? (
+                  <div>
+                    <p>Temperature: {weatherData[city.name]?.main.temp} °C</p>
+                    <p>
+                      Condition:{" "}
+                      {weatherData[city.name]?.weather[0].description}
+                    </p>
+                  </div>
+                ) : (
+                  <p>No data</p> // Show no data message
+                )}
+              </div>
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+    </>
   );
 };
 

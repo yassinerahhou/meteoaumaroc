@@ -4,7 +4,7 @@
 
 #map {
   height: 500px;
-  width: 800%;
+  width: 100%;
   margin: 20px 0;
 }
 .dnyamic_map {
@@ -13,5 +13,6 @@
   width: 100%;
   /* padding: auto; */
   /* margin-left: 40px; */
-  margin: 20px 0;
+  /* margin: 20px 0; */
+  margin-top: 100px;
 }

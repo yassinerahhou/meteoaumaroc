@@ -99,6 +99,10 @@ export default function Search(): JSX.Element {
               position: "relative",
               display: "flex",
               marginTop: "2.5rem",
+              padding: " 20px",
+              // border: "1px red solid",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <input
@@ -106,6 +110,8 @@ export default function Search(): JSX.Element {
               value={term}
               className="myInput"
               onChange={onInputChange}
+              placeholder=" Please enter your city name"
+              style={{ width: "600px", height: "45px" }}
             />
             <ul className="list-map-sugg-1">
               {options.map((option, index) => (

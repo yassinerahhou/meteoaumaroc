@@ -1,22 +1,38 @@
-import React from "react";
+// import React, { useEffect } from "react";
 import "./../../assets/css/tailwind.css";
 import "./../../assets/css/LineIcons.2.0.css";
 import "./../../assets/css/animate.css";
-
 import "./../../assets/css/tiny-slider.css";
+import "./../../assets/css/animate.css";
 import "./../../assets/css/main.css";
-import Logo from "./../../assets/img/logo.svg";
+import Logo from "./../../assets/img/logo.png";
 import Search from "./../search-irea";
 export default function Header_2() {
+  //   useEffect(() => {
+  //     window.onscroll = function () {
+  //       var header_navbar = document.querySelector(".navigation");
+  //       var sticky = header_navbar.offsetTop;
+
+  //       if (window.pageYOffset > sticky) {
+  //         header_navbar.classList.add("sticky");
+  //       } else {
+  //         header_navbar.classList.remove("sticky");
+  //       }
+  //     };
+  //   }, []);
+
   return (
     <>
       <header id="header-wrap" className="relative">
         {/* <!-- Navbar Start --> */}
-        <div className="navigation fixed top-0 left-0 w-full z-30 duration-300">
+        <div
+          className="navigation fixed top-0 left-0 w-full z-30 duration-300"
+          style={{ position: "absolute" }}
+        >
           <div className="container">
             <nav className="navbar py-2 navbar-expand-lg flex justify-between items-center relative duration-300">
               <a className="navbar-brand" href="index.html">
-                <img src={Logo} alt="Logo" />
+                <img src={Logo} alt="Logo" style={{ height: "50px" }} />
               </a>
               <button
                 className="navbar-toggler focus:outline-none block lg:hidden"

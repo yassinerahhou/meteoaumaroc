@@ -51,11 +51,13 @@ button {
   color: #111010; /* Use the desired text color */
   padding: 0.25rem 0.5rem;
   cursor: pointer;
+  height: 45px;
 }
 
 button:hover {
   border-color: #888888; /* Use the desired border color on hover */
-  color: #888888; /* Use the desired text color on hover */
+  color: white;
+  background-color: royalblue; /* Use the desired text color on hover */
 }
 .list-map-sugg-1 {
   position: absolute;
