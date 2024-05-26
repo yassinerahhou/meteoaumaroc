@@ -15,6 +15,7 @@ export interface weatherDataType {
     humidity: number;
   };
   weather: {
+    [x: string]: any;
     description: string;
     icon: string;
   }[];
