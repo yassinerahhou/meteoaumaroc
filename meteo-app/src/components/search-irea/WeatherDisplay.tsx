@@ -3,6 +3,7 @@ import { weatherDataType } from "./../../types";
 import "./WeatherDisplay.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { getWeatherIcon } from "./WeatherIcons";
+
 interface WeatherDisplayProps {
   weatherData: weatherDataType | null;
 }
@@ -28,7 +29,8 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData }) => {
     );
   }
   // const weatherIconClass = getWeatherIcon("01d");
-  const WeatherIcon = getWeatherIcon(weatherData.weather[0].icon);
+  // const WeatherIcon = getWeatherIcon(weatherData.weather[0].icon);
+  const weatherIconUrl = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`;
 
   return (
     <div className="weather-display">
@@ -53,8 +55,16 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData }) => {
           <span id="current_data_left">
             <p id="temp_id">
               <span id="wheather_icon">
-                {" "}
-                <i className={WeatherIcon}></i>
+                <img
+                  src={weatherIconUrl}
+                  alt="weather-icon"
+                  style={{
+                    width: "150px",
+                    // height: "100px",
+                    // paddingLeft: "10px",
+                  }}
+                  id="testimg"
+                />
               </span>{" "}
               <span id="tempereteur">{weatherData.main.temp}°</span>C
             </p>

@@ -143,24 +143,28 @@ export default function Search(): JSX.Element {
         </h1>
         <div className="last_locations">
           {recentCities.slice(-3).map((recentCity, index) => (
-           <div key={index} className="city_cube">
-            <h3 className="city-name" id="recentcity-name">
-              {recentCity.city.name}
-            </h3>
-            <div className="weather-info">
-              <div className="weather-icon">
-                <img
-                src={`http://openweathermap.org/img/wn/${recentCity.weather.weather[0].icon}.png`}
-                alt="weather-icon"
-                />
-              </div>
-              <div className="temperature-info">
-                <h1 className="temperature">{recentCity.weather.main.temp}°C</h1>
-                <small>Feels_like {recentCity.weather.main.feels_like}°C</small>
+            <div key={index} className="city_cube">
+              <h3 className="city-name" id="recentcity-name">
+                {recentCity.city.name}
+              </h3>
+              <div className="weather-info">
+                <div className="weather-icon">
+                  <img
+                    src={`http://openweathermap.org/img/wn/${recentCity.weather.weather[0].icon}.png`}
+                    alt="weather-icon"
+                  />
+                </div>
+                <div className="temperature-info">
+                  <h1 className="temperature">
+                    {recentCity.weather.main.temp}°C
+                  </h1>
+                  <small>
+                    Feels_like {recentCity.weather.main.feels_like}°C
+                  </small>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
         </div>
         <br />
       </section>
@@ -205,8 +209,8 @@ export default function Search(): JSX.Element {
                   <div key={index} className="forecast-card">
                     <div className="weather-icon">
                       <img
-                      src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`}
-                      alt="weather-icon"
+                        src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`}
+                        alt="weather-icon"
                       />
                     </div>
 

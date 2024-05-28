@@ -8,7 +8,7 @@ export default function contact() {
               className="mb-12 text-4xl text-gray-700 font-bold tracking-wide wow fadeInDown"
               data-wow-delay="0.3s"
             >
-              Contact
+              Contact US
             </h2>
           </div>
 
