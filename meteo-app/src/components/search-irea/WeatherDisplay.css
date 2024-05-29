@@ -117,9 +117,11 @@
   font-size: 16px;
   font-weight: 500;
   /* display: inline; */
-  margin-right: 8px;
+  /* margin-right: 8px; */
   margin-left: 15px;
   padding-top: 15px;
+  /* float: left; */
+  /* border: red solid 1px; */
 }
 #current_data_right span {
   font-size: 16px;
