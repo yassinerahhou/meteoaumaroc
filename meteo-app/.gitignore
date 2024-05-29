@@ -25,3 +25,6 @@ dist-ssr
 Decumontation
 exemlpe.env
 /*.env
+# Environment variables
+.env
+
