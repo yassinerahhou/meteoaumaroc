@@ -59,13 +59,13 @@ export default function Header_2() {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="page-scroll" href="#services">
-                      Services
+                    <a className="page-scroll" href="#Forecast">
+                      Forecast
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="page-scroll" href="#feature">
-                      Feature
+                    <a className="page-scroll" href="MAP">
+                      Map
                     </a>
                   </li>
                   {/* <li className="nav-item">
@@ -74,8 +74,8 @@ export default function Header_2() {
                     </a>
                   </li> */}
                   <li className="nav-item">
-                    <a className="page-scroll" href="#testimonial">
-                      Testimonial
+                    <a className="page-scroll" href="#ARTICLES">
+                      ARTICLES
                     </a>
                   </li>
                   {/* <li className="nav-item">

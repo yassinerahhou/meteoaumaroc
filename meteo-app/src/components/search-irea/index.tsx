@@ -95,6 +95,7 @@ export default function Search(): JSX.Element {
           </p>
 
           <div
+            id="Forecast"
             style={{
               position: "relative",
               display: "flex",

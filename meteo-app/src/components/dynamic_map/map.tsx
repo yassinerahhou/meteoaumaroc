@@ -90,6 +90,7 @@ const Map: React.FC = () => {
         Real-Time Weather Conditions
       </h1>
       <MapContainer
+        id="MAP"
         center={[31.7917, -7.0926]}
         zoom={4}
         className="dnyamic_map"
