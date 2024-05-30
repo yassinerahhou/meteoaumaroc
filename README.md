@@ -15,6 +15,7 @@ Search Functionality: Easily search for weather information by city name or geog
 Responsive Design: Optimized for both mobile and desktop users.
 
 Technologies Used
+
 Frontend Development
 React.js: A JavaScript library for building fast and interactive user interfaces.
 TypeScript: A typed superset of JavaScript that helps catch errors early and improve code maintainability.
