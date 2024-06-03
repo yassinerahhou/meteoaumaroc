@@ -22,7 +22,9 @@ const Map: React.FC = () => {
   useEffect(() => {
     cities.forEach((city) => {
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=a66d11d3a668ad93f9cf6b25dc0ac419`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${
+          city.lon
+        }&units=metric&appid=${import.meta.env.VITE_APP_API_KEY}`
       )
         .then((res) => res.json())
         .then((data) => {

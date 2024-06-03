@@ -23,3 +23,22 @@ export interface weatherDataType {
     speed: number;
   };
 }
+
+interface Weather {
+  icon: string;
+}
+
+interface Main {
+  temp: number;
+  feels_like: number;
+}
+
+interface Forecast {
+  dt_txt: string;
+  main: Main;
+  weather: Weather[];
+}
+
+interface ForecastData {
+  list: Forecast[];
+}

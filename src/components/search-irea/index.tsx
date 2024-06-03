@@ -16,7 +16,9 @@ export default function Search(): JSX.Element {
 
   const getSearchoptions = (value: string) => {
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${value.trim()}&limit=5&appid=a66d11d3a668ad93f9cf6b25dc0ac419`
+      `http://api.openweathermap.org/geo/1.0/direct?q=${value.trim()}&limit=5&appid=${
+        import.meta.env.VITE_APP_API_KEY
+      }`
     )
       .then((res) => res.json())
       .then((data) => setOptions(data));
@@ -30,7 +32,9 @@ export default function Search(): JSX.Element {
 
   const getForecast = (city: optionType) => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=a66d11d3a668ad93f9cf6b25dc0ac419`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${
+        city.lon
+      }&units=metric&appid=${import.meta.env.VITE_APP_API_KEY}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -44,7 +48,11 @@ export default function Search(): JSX.Element {
         );
         // Fetch forecast data
         fetch(
-          `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=a66d11d3a668ad93f9cf6b25dc0ac419`
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${
+            city.lat
+          }&lon=${city.lon}&units=metric&appid=${
+            import.meta.env.VITE_APP_API_KEY
+          }`
         )
           .then((res) => res.json())
           .then((forecast) => {
