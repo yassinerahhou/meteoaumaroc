@@ -8,7 +8,8 @@ export default function Search(): JSX.Element {
   const [city, setCity] = useState<optionType | null>(null);
   const [options, setOptions] = useState<optionType[]>([]);
   const [weatherData, setWeatherData] = useState<weatherDataType | null>(null);
-  const [forecastData, setForecastData] = useState<any>(null);
+  // const [forecastData, setForecastData] = useState<any>(null);
+  const [forecastData, setForecastData] = useState<ForecastData | null>(null);
   const [recentCities, setRecentCities] = useState<
     { city: optionType; weather: weatherDataType }[]
   >([]);
