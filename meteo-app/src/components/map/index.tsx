@@ -6,6 +6,8 @@ import axios from "axios";
 interface WeatherData {
   weather: { description: string }[];
   main: { temp: number };
+  coord: LatLngTuple; // Add the coord property
+  temp: number;
 }
 
 interface City {
