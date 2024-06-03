@@ -2,7 +2,7 @@ import React from "react";
 import { weatherDataType } from "./../../types";
 import "./WeatherDisplay.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { getWeatherIcon } from "./WeatherIcons";
+// import { getWeatherIcon } from "./WeatherIcons";
 
 interface WeatherDisplayProps {
   weatherData: weatherDataType | null;
