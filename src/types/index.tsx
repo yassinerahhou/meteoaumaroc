@@ -6,6 +6,7 @@ export type optionType = {
   lon: number;
   country: string;
 };
+
 export interface weatherDataType {
   visibility: number;
   name: string;
@@ -15,7 +16,6 @@ export interface weatherDataType {
     humidity: number;
   };
   weather: {
-    [x: string]: any;
     description: string;
     icon: string;
   }[];
@@ -39,6 +39,6 @@ interface Forecast {
   weather: Weather[];
 }
 
-interface ForecastData {
+export interface ForecastData {
   list: Forecast[];
 }

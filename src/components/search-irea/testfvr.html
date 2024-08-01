@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Best VPNs 2024</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            padding-top: 50px;
+            /* Adjust as needed */
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .vpn-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .vpn-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-wrap: wrap;
+            /* Ensure items wrap properly on smaller screens */
+        }
+
+        .vpn-item:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .vpn-item img {
+            max-width: 100%;
+            /* Make images responsive */
+            height: auto;
+            margin-right: 20px;
+            max-height: 150px;
+            /* Limit image height */
+        }
+
+        .vpn-item .features-holder {
+            margin-top: 10px;
+        }
+
+        .vpn-item .btn {
+            background-color: #ff5f5f;
+            color: white;
+            margin-top: 10px;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .vpn-item .btn:hover {
+            background-color: #ff3b3b;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid #f00;
+            padding: 40px;
+            /* Increased padding for larger popup */
+            background-color: white;
+            z-index: 1000;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .popup.active {
+            display: block;
+        }
+
+        .popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #888;
+            font-size: 24px;
+            /* Larger font size */
+        }
+
+        .popup .close-btn:hover {
+            color: #333;
+        }
+
+        .popup h2 {
+            font-size: 28px;
+            /* Larger font size */
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .popup p {
+            font-size: 18px;
+            /* Larger font size */
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .popup .btn {
+            background-color: #ff5f5f;
+            color: white;
+            padding: 12px 30px;
+            /* Larger padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup .btn:hover {
+            background-color: #ff3b3b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="vpn-list">
+            <li class="vpn-item">
+                <img src="https://www.vpnselections.live/wp-content/uploads/2024/07/nordvpn-header-2.webp"
+                    alt="NordVPN Logo">
+                <div>
+                    <h2>1. NordVPN <span style="color: red;">(Highly Recommended)</span></h2>
+                    <p>NordVPN offers excellent security features, a large number of servers, and fast speeds.</p>
+                    <div class="features-holder">
+                        <ul class="features features-tick">
+                            <li>30-day money-back guarantee</li>
+                            <li>High-speed servers in 59 countries</li>
+                            <li>6 simultaneous VPN connections allowed</li>
+                            <li>24/7 customer support</li>
+                        </ul>
+                    </div>
+                    <p>Starting from $3.99 per month</p>
+                    <a href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=107187" class="btn" target="_blank">Visit
+                        the site</a>
+                </div>
+            </li>
+            <li class="vpn-item">
+                <img src="https://www.vpnselections.live/wp-content/uploads/2024/07/62ac1f5c67d50ada30f1e7759102fb13.jpg"
+                    alt="Surfshark Logo">
+                <div>
+                    <h2>2. Surfshark <span style="color: red;">(Highly Recommended)</span></h2>
+                    <p>Surfshark offers unlimited device connections, robust security features, and excellent customer
+                        support.</p>
+                    <div class="features-holder">
+                        <ul class="features features-tick">
+                            <li>30-day money-back guarantee</li>
+                            <li>Unlimited device connections</li>
+                            <li>Servers in 65 countries</li>
+                            <li>24/7 customer support</li>
+                        </ul>
+                    </div>
+                    <p>Starting from $2 per month</p>
+                    <a href="https://get.surfshark.net/aff_c?offer_id=926&aff_id=32482" class="btn"
+                        target="_blank">Visit the site</a>
+                </div>
+            </li>
+            <li class="vpn-item">
+                <img src="https://www.vpnselections.live/wp-content/uploads/2024/07/exp-1.webp" alt="ExpressVPN Logo">
+                <div>
+                    <h2>3. ExpressVPN</h2>
+                    <p>ExpressVPN offers blazing fast speeds and top-notch security features. It's easy to use and
+                        provides excellent customer support.</p>
+                    <div class="features-holder">
+                        <ul class="features features-tick">
+                            <li>30-day money-back guarantee</li>
+                            <li>High-speed servers in 94 countries</li>
+                            <li>5 simultaneous VPN connections allowed</li>
+                            <li>24/7 customer support</li>
+                        </ul>
+                    </div>
+                    <p>Starting from $2 per month</p>
+                    <a href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=107187" class="btn" target="_blank">Visit
+                        the site</a>
+                </div>
+            </li>
+            <!-- test -->
+
+            <!-- end test -->
+            <li class="vpn-item">
+                <img src="https://www.vpnselections.live/wp-content/uploads/2024/07/cyberghost-vpn-logo-1024x1024-1.jpg"
+                    alt="CyberGhost Logo">
+                <div>
+                    <h2>4. CyberGhost</h2>
+                    <p>CyberGhost is user-friendly and offers specialized servers for streaming and torrenting.</p>
+                    <div class="features-holder">
+                        <ul class="features features-tick">
+                            <li>45-day money-back guarantee</li>
+                            <li>Optimized servers for streaming and torrenting</li>
+                            <li>7 simultaneous VPN connections allowed</li>
+                            <li>Network of over 6,800 servers</li>
+                        </ul>
+                    </div>
+                    <p>Starting from $2 per month</p>
+                    <a href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=107187" class="btn" target="_blank">Visit
+                        the site</a>
+                </div>
+            </li>
+            <li class="vpn-item">
+                <img src="https://www.vpnselections.live/wp-content/uploads/2024/07/proton-logo2.webp"
+                    alt="ProtonVPN Logo">
+                <div>
+                    <h2>5. ProtonVPN</h2>
+                    <p>ProtonVPN focuses on privacy and security, with a strict no-logs policy and strong encryption.
+                    </p>
+                    <div class="features-holder">
+                        <ul class="features features-tick">
+                            <li>30-day money-back guarantee</li>
+                            <li>Strong encryption and privacy features</li>
+                            <li>Servers in 54 countries</li>
+                            <li>10 simultaneous VPN connections allowed</li>
+                        </ul>
+                    </div>
+                    <p>Starting from $2 per month</p>
+                    <a href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=107187" class="btn" target="_blank">Visit
+                        the site</a>
+                </div>
+            </li>
+            <li class="vpn-item">
+                <img src="https://www.vpnselections.live/wp-content/uploads/2024/07/images.png" alt="TotalVPN Logo">
+                <div>
+                    <h2>6. TotalVPN</h2>
+                    <p>TotalVPN provides excellent speeds and a wide range of server locations worldwide.</p>
+                    <div class="features-holder">
+                        <ul class="features features-tick">
+                            <li>30-day money-back guarantee</li>
+                            <li>High-speed servers in numerous countries</li>
+                            <li>5 simultaneous VPN connections allowed</li>
+                            <li>User-friendly apps for all devices</li>
+                        </ul>
+                    </div>
+                    <p>Starting from $2 per month</p>
+                    <a href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=107187" class="btn">Visit the site</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Popup sections as before -->
+    <div id="nordvpn-popup" class="popup">
+        <span class="close-btn">&times;</span>
+        <h2>NordVPN</h2>
+        <p>NordVPN offers excellent security features, a large number of servers, and fast speeds.</p>
+        <p>Starting from $3.99 per month.</p>
+        <a href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=107187" class="btn" target="_blank">Get NordVPN</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to toggle popup visibility
+        function togglePopup(popupId) {
+            var popup = document.getElementById(popupId);
+            popup.classList.toggle("active");
+        }
+
+        // Close popup when close button is clicked
+        var closeBtns = document.querySelectorAll('.close-btn');
+        closeBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var popup = btn.closest('.popup');
+                popup.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
