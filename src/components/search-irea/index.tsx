@@ -42,9 +42,7 @@ const Search: React.FC = (): JSX.Element => {
     }
 
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${value.trim()}&limit=5&appid=${
-        import.meta.env.VITE_APP_API_KEY
-      }`
+      `http://api.openweathermap.org/geo/1.0/direct?q=${value.trim()}&limit=5&appid=a66d11d3a668ad93f9cf6b25dc0ac419`
     )
       .then((res) => res.json())
       .then((data: optionType[]) => {
@@ -62,9 +60,7 @@ const Search: React.FC = (): JSX.Element => {
 
   const getForecast = (city: optionType) => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${
-        city.lon
-      }&units=metric&appid=${import.meta.env.VITE_APP_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=a66d11d3a668ad93f9cf6b25dc0ac419`
     )
       .then((res) => res.json())
       .then((data: weatherDataType) => {
@@ -82,11 +78,8 @@ const Search: React.FC = (): JSX.Element => {
         );
 
         fetch(
-          `https://api.openweathermap.org/data/2.5/forecast?lat=${
-            city.lat
-          }&lon=${city.lon}&units=metric&appid=${
-            import.meta.env.VITE_APP_API_KEY
-          }`
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=
+          a66d11d3a668ad93f9cf6b25dc0ac419`
         )
           .then((res) => res.json())
           .then((forecast: ForecastData) => {
@@ -100,9 +93,7 @@ const Search: React.FC = (): JSX.Element => {
       getForecast(city);
     } else if (searchTerm.trim() !== "") {
       fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${searchTerm.trim()}&limit=1&appid=${
-          import.meta.env.VITE_APP_API_KEY
-        }`
+        `http://api.openweathermap.org/geo/1.0/direct?q=${searchTerm.trim()}&limit=1&appid=a66d11d3a668ad93f9cf6b25dc0ac419`
       )
         .then((res) => res.json())
         .then((data: optionType[]) => {
